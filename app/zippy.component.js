@@ -22,7 +22,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 function ZippyComponent() {
                     this.opened = false;
                 }
-                ZippyComponent.prototype.onClick = function () {
+                ZippyComponent.prototype.toggle = function () {
                     this.opened = !this.opened;
                 };
                 __decorate([
@@ -32,8 +32,8 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 ZippyComponent = __decorate([
                     core_1.Component({
                         selector: 'zippy',
-                        template: "  \n    <div class=\"panel panel-default\">\n        <div class=\"panel heading\">\n            {{title}}\n            <i class=\"glyphicon\" \n            [ngClass]=\"{ \n                'glyphicon-chevron-down': !opened,  \n                'glyphicon-chevron-up': opened \n            }\"\n            (click)=\"onClick()\"\n            >\n            </i>\n        </div>\n        <div *ngIf=\"opened\" class=\"panel-body\">\n            <ng-content></ng-content>\n        </div>\n    </div>\n    \n\n    ",
-                        styles: ["\n        .glyphicon-chevron-up {\n            color: #ccc;\n            cursor: pointer;\n            position: absolute;\n            top: 8px;\n            right: 16px;\n        }\n        .glyphicon-chevron-down {\n            color: #ccc;\n            cursor: pointer;\n            position: absolute;\n            top: 8px;\n            right: 16px;\n        }\n        "
+                        template: "  \n    <div class=\"panel panel-default\">\n        <div class=\"panel heading\" (click)=\"toggle()\">\n            {{title}}\n            <i class=\"pull-right glyphicon\" \n            [ngClass]=\"{ \n                'glyphicon-chevron-down': !opened,  \n                'glyphicon-chevron-up': opened \n            }\"\n            >\n            </i>\n        </div>\n        <div *ngIf=\"opened\" class=\"panel-body\">\n            <ng-content></ng-content>\n        </div>\n    </div>\n    \n\n    ",
+                        styles: ["\n        .heading{\n            cursor: pointer;\n        }\n        "
                         ]
                     }), 
                     __metadata('design:paramtypes', [])

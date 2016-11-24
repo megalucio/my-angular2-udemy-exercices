@@ -3,14 +3,13 @@ import { Input, Component } from 'angular2/core';
     selector: 'zippy',
     template:`  
     <div class="panel panel-default">
-        <div class="panel heading">
+        <div class="panel heading" (click)="toggle()">
             {{title}}
-            <i class="glyphicon" 
+            <i class="pull-right glyphicon" 
             [ngClass]="{ 
                 'glyphicon-chevron-down': !opened,  
                 'glyphicon-chevron-up': opened 
             }"
-            (click)="onClick()"
             >
             </i>
         </div>
@@ -22,19 +21,8 @@ import { Input, Component } from 'angular2/core';
 
     `,
     styles: [`
-        .glyphicon-chevron-up {
-            color: #ccc;
+        .heading{
             cursor: pointer;
-            position: absolute;
-            top: 8px;
-            right: 16px;
-        }
-        .glyphicon-chevron-down {
-            color: #ccc;
-            cursor: pointer;
-            position: absolute;
-            top: 8px;
-            right: 16px;
         }
         `
     ]
@@ -45,7 +33,7 @@ export class ZippyComponent {
     opened = false;
     @Input() title;
 
-    onClick(){
+    toggle(){
         this.opened = !this.opened;
 
     }

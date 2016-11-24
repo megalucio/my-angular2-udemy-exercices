@@ -30,6 +30,9 @@ import { Tweet } from './tweet';
                 <zippy title="This is the title">
                     This is the content
                 </zippy>
+                <zippy title="Tócame el pie">
+                    Mi pie
+                </zippy>
 
                 `,
     //directives: [CoursesComponent, AuthorsComponent, FavoritesComponent, LikeComponent, VotingComponent],
