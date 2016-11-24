@@ -1,3 +1,4 @@
+import { ZippyComponent } from './zippy.component';
 import { TweetService } from './tweet.service';
 import { TweetComponent } from './tweet.component';
 import { VotingComponent } from './voting.component';
@@ -21,14 +22,19 @@ import { Tweet } from './tweet';
                     [votes]=10 
                     [myVote]=0
                     (vote)="onVote($event)"
-                ></voting>
-                -->
+                ></voting>              
                 <div *ngFor="#tweet of tweets">
                     <tweet [tweet]="tweet"></tweet>
                 </div>
+                -->
+                <zippy title="This is the title">
+                    This is the content
+                </zippy>
+
                 `,
     //directives: [CoursesComponent, AuthorsComponent, FavoritesComponent, LikeComponent, VotingComponent],
-    directives: [TweetComponent],
+    //directives: [TweetComponent],
+    directives: [ZippyComponent],
     providers: [TweetService]
 })
 export class AppComponent {
